@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Grupal - Laboratorio de Física</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación de páginas -->
+    <div class="page-navigation">
+        <button class="nav-arrow nav-prev" id="prevPage" aria-label="Página anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="page-indicator">
+            <span class="current-page">1</span>
+            <span class="page-separator">/</span>
+            <span class="total-pages">2</span>
+        </div>
+        <button class="nav-arrow nav-next" id="nextPage" aria-label="Página siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Contenedor de páginas -->
+    <div class="pages-wrapper">
+        
+        <!-- PÁGINA 1: CARÁTULA GRUPAL -->
+        <section class="page active" id="page1">
+            <div class="page-sheet">
+                
+                <!-- Partículas de fondo animadas -->
+                <div class="particles-bg">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+
+                <!-- Imagen decorativa de física -->
+                <div class="physics-decoration top-right">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Onda electromagnética -->
+                        <path d="M 20 100 Q 40 80, 60 100 T 100 100 T 140 100 T 180 100" 
+                              stroke="url(#waveGrad)" stroke-width="2" fill="none" opacity="0.3"/>
+                        <path d="M 20 100 Q 40 120, 60 100 T 100 100 T 140 100 T 180 100" 
+                              stroke="url(#waveGrad2)" stroke-width="2" fill="none" opacity="0.3"/>
+                        <defs>
+                            <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+
+                <!-- Logo con diseño moderno de laboratorio -->
+                <div class="university-logo">
+                    <div class="logo-circle">
+                        <div class="lab-icon">
+                            <!-- Matraz de laboratorio -->
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M35 15 L35 40 L25 70 L75 70 L65 40 L65 15 Z" 
+                                      stroke="white" stroke-width="3" fill="rgba(255,255,255,0.2)"/>
+                                <circle cx="35" cy="50" r="3" fill="white" opacity="0.6"/>
+                                <circle cx="50" cy="55" r="4" fill="white" opacity="0.8"/>
+                                <circle cx="60" cy="52" r="2.5" fill="white" opacity="0.7"/>
+                                <line x1="30" y1="15" x2="70" y2="15" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información institucional -->
+                <div class="institutional-info">
+                    <h1 class="university-name">Universidad Central del Ecuador</h1>
+                    <h2 class="faculty-name">Facultad de Filosofía, Letras y Ciencias de la Educación</h2>
+                    <div class="division-line"></div>
+                </div>
+
+                <!-- Título del portafolio -->
+                <div class="portfolio-title">
+                    <div class="title-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Portafolio Grupal</span>
+                    </div>
+                    <h3 class="subject-label">Asignatura</h3>
+                    <h4 class="subject-name">LABORATORIO DE FÍSICA</h4>
+                    <div class="subject-code">PCEI5-002</div>
+                </div>
+
+                <!-- Información de los estudiantes -->
+                <div class="team-section">
+                    <h5 class="team-title">Integrantes del Grupo</h5>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">Lenin Moneta</span>
+                                <span class="member-role">Integrante</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">Jhordan Averos</span>
+                                <span class="member-role">Integrante</span>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="member-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="member-info">
+                                <span class="member-name">Dayana Torres</span>
+                                <span class="member-role">Integrante</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div class="additional-info">
+                    <div class="info-group">
+                        <span class="info-label">Docente:</span>
+                        <span class="info-value">Msc. Diego Tipán</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Paralelo:</span>
+                        <span class="info-value">B</span>
+                    </div>
+                    <div class="info-group">
+                        <span class="info-label">Período:</span>
+                        <span class="info-value">Octubre 2025 - Febrero 2026</span>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="cover-footer">
+                    <div class="location"></div>
+                    <div class="year"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 2: ÍNDICE DE LABORATORIOS -->
+        <section class="page" id="page2">
+            <div class="page-sheet">
+                <div class="content-container">
+                    
+                    <!-- Título de la página -->
+                    <h2 class="page-title">
+                        Índice de Contenidos
+                    </h2>
+
+                    <!-- Contenido del índice -->
+                    <div class="index-content">
+                        
+                        <!-- LABORATORIO 1 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">01</div>
+                                <h3 class="lab-title">Laboratorio 1: Errores en mediciones directas</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <!-- Informes Vacíos -->
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Informes Llenos -->
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 2 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">02</div>
+                                <h3 class="lab-title">Laboratorio 2: Propagación en mediciones directas e indirectas</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/18DCUow3d67-2BxvH8eziQuQsWzALG0GY/view?usp=sharing" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío PDF</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1VhWwNC5RhlD0Bgkjicgg96h4bq0bsGUV/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío Word</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 3 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">03</div>
+                                <h3 class="lab-title">Laboratorio 3: Vectores en el espacio</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 4 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">04</div>
+                                <h3 class="lab-title">Laboratorio 4: MRU (tubo de inmersión)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/1tDjOS2NUEV1dP_ZytLu2jqjzB3P3J2yM/view?usp=sharing" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío PDF </span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1SIxDwYQ758vVPXiXyox1rGz7EvPD0rg0/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío Word </span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/10AVuILdkWkjRjv-9UA1L9-JXQh3hueAA/view?usp=sharing" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo PDF</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1Ubj-a1LR_RcqxpVFdKtkUF3nkMkbjZLA/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo Word</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 5 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">05</div>
+                                <h3 class="lab-title">Laboratorio 5: MRUV (plano de galileo)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 6 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">06</div>
+                                <h3 class="lab-title">Laboratorio 6: MCUV (disco neumático)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 7 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">07</div>
+                                <h3 class="lab-title">Laboratorio 7: MCU (cinemómetro)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/1V0bOXlIqC24jcjvz0iI4TnKuEWlPTHbF/view?usp=sharing" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe PDF Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1jB45A1URPPXgj_69NwMfEtRkFldEZKhL/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Word Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/1k1BJi8qZCvIVY0GgahmZ0RHjhRcdv0yb/view?usp=sharing" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe PDF  Completo </span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1mAIDr7vZtFlXcK9Gq8bxvT2KIpdYTSE8/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe word Completo </span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 8 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">08</div>
+                                <h3 class="lab-title">Laboratorio 8: Movimiento Parabólico (Catapulta)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 9 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">09</div>
+                                <h3 class="lab-title">Laboratorio 9: Dinámica I - Segunda ley Newton (Atwood)</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="TU_LINK_DE_DRIVE_AQUI" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LABORATORIO 10 -->
+                        <div class="lab-section">
+                            <div class="lab-header">
+                                <div class="lab-number">10</div>
+                                <h3 class="lab-title">Laboratorio 10: Ley de Hooke</h3>
+                            </div>
+                            
+                            <div class="lab-content">
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                            <polyline points="13 2 13 9 20 9"></polyline>
+                                        </svg>
+                                        Informes Vacíos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/1TwMae1O2yIsO0C3z8VSxRc31WT8yHfAv/view?usp=sharing" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío PDF 1</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1sev2ElcKnMnQmHDX1Uv1oyRKsJrx3K3C/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link">
+                                            <span class="doc-icon">📄</span>
+                                            <span class="doc-name">Informe Vacío Word 2</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="subsection">
+                                    <h4 class="subsection-title">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="9 11 12 14 22 4"></polyline>
+                                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                                        </svg>
+                                        Informes Llenos
+                                    </h4>
+                                    <div class="link-grid">
+                                        <a href="https://drive.google.com/file/d/1hQfNEvgnBVlSmV8XJzj_DD2PNCwTJPXs/view?usp=sharing" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo PDF</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a href="https://docs.google.com/document/d/1zWnXUq0LRecbzCRq7GwmEhxOoc3o1-Gq/edit?usp=sharing&ouid=118301287263077251864&rtpof=true&sd=true" target="_blank" class="doc-link completed">
+                                            <span class="doc-icon">✅</span>
+                                            <span class="doc-name">Informe Completo Word</span>
+                                            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                                <polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
